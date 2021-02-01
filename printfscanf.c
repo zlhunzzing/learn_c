@@ -12,5 +12,8 @@ int main(void)
 	//printf("%.2f\n", f);
 	//double d = 4.428;
 	//printf("%.2f\n", d);
+	const int YEAR = 2000; // 상수
+	printf("태어난 년도 : %d\n", YEAR);
+	//YEAR = 2001
 	return 0;
 }

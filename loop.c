@@ -13,19 +13,19 @@ int main(void)
 	//printf("Hello World\n");
 	//printf("Hello World\n");
 	
-	// ++ »ά»ά
+	// ++ μ μ 
 	//int a = 10;
-	//printf("a ΄Β %d\n", a);
+	//printf("a λ” %d\n", a);
 	//a++;
-	//printf("a ΄Β %d\n", a);
+	//printf("a λ” %d\n", a);
 	//a++;
-	//printf("a ΄Β %d\n", a);
+	//printf("a λ” %d\n", a);
 
 	//int b = 20;
 	//// b + b + 1;
-	//printf("b΄Β %d\n", ++b);
-	//printf("b΄Β %d\n", b++);
-	//printf("b΄Β %d\n", b);
+	//printf("bλ” %d\n", ++b);
+	//printf("bλ” %d\n", b++);
+	//printf("bλ” %d\n", b);
 
 	//int i = 1;
 	//printf("Hello World %d\n", i++);
@@ -39,16 +39,16 @@ int main(void)
 	//printf("Hello World %d\n", i++);
 	//printf("Hello World %d\n", i++);
 
-	// ΉέΊΉΉ®
+	// λ°λ³µλ¬Έ
 	// for, while, do while
 
-	// for (Ό±Ύπ; Α¶°Η; Αυ°¨)
+	// for (μ„ μ–Έ; μ΅°κ±΄; μ¦κ°)
 	/*for (int i = 1; i <= 10; i++)
 	{
 		printf("Hello World %d\n", i);
 	}*/
 
-	// while (Α¶°Η) { }
+	// while (μ΅°κ±΄) { }
 	//int i = 1;
 	//while (i <= 10)
 	//{
@@ -56,11 +56,38 @@ int main(void)
 	//	//i++;
 	//}
 
-	// do [ ] while (Α¶°Η);
-	int i = 1;
+	// do [ ] while (μ΅°κ±΄);
+	/*int i = 1;
 	do {
 		printf("Hello World %d\n", i++);
-	} while (i <= 10);
+	} while (i <= 10);*/
+
+	// 2μ¤‘ λ°λ³µλ¬Έ
+	//for (int i = 1; i <= 3; i++)
+	//{
+	//	printf("μ²« λ²μ§Έ λ°λ³µλ¬Έ : %d\n", i);
+
+	//	for (int j = 1; j <= 5; j++)
+	//	{
+	//		printf("    λ‘ λ²μ§Έ λ°λ³µλ¬Έ : %d\n", j);
+	//	}
+	//}
+
+	// κµ¬κµ¬λ‹¨
+	// 2 x 1 = 2
+	// 2 x 2 = 4
+	// 2 x 3 = 6
+	// 2 x 4 == 8
+	// ...
+	// 9 x 9 = 81
+	for (int i = 2; i <= 9; i++)
+	{
+		printf("%dλ‹¨ κ³„μ‚°\n", i);
+		for (int j = 1; j <= 9; j++)
+		{
+			printf("  %d x %d = %d\n", i, j, i * j);
+		}
+	}
 
 	return 0;
 }

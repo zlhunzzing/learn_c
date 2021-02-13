@@ -80,13 +80,29 @@ int main(void)
 	// 2 x 4 == 8
 	// ...
 	// 9 x 9 = 81
-	for (int i = 2; i <= 9; i++)
+	//for (int i = 2; i <= 9; i++)
+	//	printf("%d단 계산\n", i);
+	//{
+	//	for (int j = 1; j <= 9; j++)
+	//	{
+	//		printf("  %d x %d = %d\n", i, j, i * j);
+	//	}
+	//}
+
+	/*
+	*
+	**
+	***
+	****
+	*****
+	*/
+	for (int i = 0; i < 5; i++)
 	{
-		printf("%d단 계산\n", i);
-		for (int j = 1; j <= 9; j++)
+		for (int j = 0; j <= i; j++)
 		{
-			printf("  %d x %d = %d\n", i, j, i * j);
+			printf("*");
 		}
+		printf("\n");
 	}
 
 	return 0;

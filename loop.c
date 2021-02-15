@@ -96,9 +96,30 @@ int main(void)
 	****
 	*****
 	*/
-	for (int i = 0; i < 5; i++)
+	/*for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j <= i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}*/
+
+    /*
+	SSSS*
+	SSS**
+	SS***
+	S****
+	*****
+	*/
+
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = i; j < 5 - 1; j++)
+		{
+			printf(" ");
+		}
+		for (int k = 0; k <= i; k++)
 		{
 			printf("*");
 		}

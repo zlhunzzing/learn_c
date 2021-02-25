@@ -1,42 +1,48 @@
 #include <stdint.h>>
 
-// ¼±¾ğ
+// ì„ ì–¸
 void p(int num);
 
 int main(void)
 {
 	// function
-	// °è»ê±â
+	// ê³„ì‚°ê¸°
 
 	int num = 2;
-	//printf("numÀº %d ÀÔ´Ï´Ù\n", num); // 2
+	//printf("numì€ %d ì…ë‹ˆë‹¤\n", num); // 2
 	p(num);
 
-	// 2 + 3 Àº?
+	// 2 + 3 ì€?
 	num = num + 3; // num += 3;
-	//printf("num Àº %d ÀÔ´Ï´Ù\n", num); // 5
+	//printf("num ì€ %d ì…ë‹ˆë‹¤\n", num); // 5
 	p(num);
 
-	// 5 - 1 Àº?
+	// 5 - 1 ì€?
 	num -= 1; // num = num -1;
-	//printf("num Àº %d ÀÔ´Ï´Ù\n", num); // 5
+	//printf("num ì€ %d ì…ë‹ˆë‹¤\n", num); // 5
 	p(num);
 
-	// 4 x 3 Àº ?
+	// 4 x 3 ì€ ?
 	num *= 3;
-	//printf("num Àº %d ÀÔ´Ï´Ù\n", num); // 12
+	//printf("num ì€ %d ì…ë‹ˆë‹¤\n", num); // 12
 	p(num);
 
-	// 12 / 6 Àº ?
+	// 12 / 6 ì€ ?
 	num /= 6;
-	//printf("num Àº %d ÀÔ´Ï´Ù\n", num); // 2
+	//printf("num ì€ %d ì…ë‹ˆë‹¤\n", num); // 2
 	p(num);
 
 	return 0;
 }
 
-// Á¤ÀÇ
+// ì •ì˜
 void p(int num)
 {
-	printf("num Àº %d ÀÔ´Ï´Ù\n", num);
+	printf("num ì€ %d ì…ë‹ˆë‹¤\n", num);
+}
+// ì „ë‹¬ê°’
+// í•¨ìˆ˜ : ã… + 4
+// ë°˜í™˜í˜• : ?
+void í•¨ìˆ˜ì´ë¦„(int num, int num2, char c, float f)
+{
 }

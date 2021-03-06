@@ -47,13 +47,39 @@ int main(void)
 	//	printf("%d\n", arr[i]);
 	//}
 
-	int arr[] = { 1, 2 }; // arr[2]
+	//int arr[] = { 1, 2 }; // arr[2]
 
-	float arr_f[5] = { 1.0f, 2.0f, 3.0f };
-	for (int i = 0; i < 5; i++)
-	{
-		printf("%.2f\n", arr_f[i]);
-	}
+	//float arr_f[5] = { 1.0f, 2.0f, 3.0f };
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	printf("%.2f\n", arr_f[i]);
+	//}
+
+	// 문자 vs 문자열
+	/*char c = 'A';
+	printf("%c\n", c);*/
+
+	// 문자열 끝에는 '끝'을 의미하는 NULL 문자 '\0' 이 포함되어야 함
+	//char str[7] = "coding"; // [c] [o] [d] [i] [n] [g] [\0]
+	//printf("%s\n", str);
+
+	//char str[] = "coding";
+	///*printf("%s\n", str);
+	//printf("%d\n", sizeof(str));*/
+
+	//for (int i = 0; i < sizeof(str); i++)
+	//{
+	//	printf("%c\n", str[i]);
+	//}
+
+	char kor[] = "나도코딩";
+	printf("%s\n", kor);
+	printf("%d\n", sizeof(kor));
+	// 영어 1글자 : 1 byte
+	// 한글	1글자 : 2 byte
+	// 한 글
+	// En gl ish
+	// char 크기 : 1 byte
 
 	return 0;
 }

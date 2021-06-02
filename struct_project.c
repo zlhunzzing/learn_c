@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include <time.h>
 
-// 5¸¶¸®ÀÇ °í¾çÀÌ°¡ ÀÖ´Ù
-// ¾Æ¹« Å°³ª ´­·¯¼­ ·£´ıÀ¸·Î °í¾çÀÌ¸¦ »ÌµÇ
-// 5¸¶¸® ¸ğµÎ ´Ù ¼öÁıÀ» ÇØ¼­ ¿­½ÉÈ÷ Å°¿ì¸é µÇ´Â °ÔÀÓ @
-// Áß º¹ ¹ß »ı °¡ ´É @
+// 5ë§ˆë¦¬ì˜ ê³ ì–‘ì´ê°€ ìˆë‹¤
+// ì•„ë¬´ í‚¤ë‚˜ ëˆŒëŸ¬ì„œ ëœë¤ìœ¼ë¡œ ê³ ì–‘ì´ë¥¼ ë½‘ë˜
+// 5ë§ˆë¦¬ ëª¨ë‘ ë‹¤ ìˆ˜ì§‘ì„ í•´ì„œ ì—´ì‹¬íˆ í‚¤ìš°ë©´ ë˜ëŠ” ê²Œì„ @
+// ì¤‘ ë³µ ë°œ ìƒ ê°€ ëŠ¥ @
 
-// °í¾çÀÌ
-// ÀÌ¸§, ³ªÀÌ, ¼º°İ, Å°¿ì±â ³­ÀÌµµ (·¹º§)
+// ê³ ì–‘ì´
+// ì´ë¦„, ë‚˜ì´, ì„±ê²©, í‚¤ìš°ê¸° ë‚œì´ë„ (ë ˆë²¨)
 
 typedef struct {
-	char* name; // ÀÌ¸§
-	int age; // ³ªÀÌ
-	char* character; // ¼º°İ
-	int level; // Å°¿ì±â ³­ÀÌµµ (1-5, 5°¡ ¾î·Á¿ò)
+	char* name; // ì´ë¦„
+	int age; // ë‚˜ì´
+	char* character; // ì„±ê²©
+	int level; // í‚¤ìš°ê¸° ë‚œì´ë„ (1-5, 5ê°€ ì–´ë ¤ì›€)
 } CAT;
 
-// ÇöÀç±îÁö º¸À¯ÇÑ °í¾çÀÌ
+// í˜„ì¬ê¹Œì§€ ë³´ìœ í•œ ê³ ì–‘ì´
 int collection[5] = { 0, 0, 0, 0, 0, };
 
-// ÀüÃ¼ °í¾çÀÌ ¸®½ºÆ®
+// ì „ì²´ ê³ ì–‘ì´ ë¦¬ìŠ¤íŠ¸
 CAT cats[5];
 
-void initCats(); // °í¾çÀÌ Á¤º¸ ÃÊ±âÈ­
+void initCats(); // ê³ ì–‘ì´ ì •ë³´ ì´ˆê¸°í™”
 void printCat(int selected);
 int main(void)
 {
@@ -32,11 +32,18 @@ int main(void)
 	void printCat(int selected);
 	while (1)
 	{
-		printf("µÎ±ÙµÎ±Ù~! ¾î´À °í¾çÀÌÀÇ Áı»ç°¡ µÉ±î¿ä?\n¾Æ¹« Å°³ª ´­·¯¼­ È®ÀÎÇÏ¼¼¿ä!");
-		//getChar();
+		printf("ë‘ê·¼ë‘ê·¼~! ì–´ëŠ ê³ ì–‘ì´ì˜ ì§‘ì‚¬ê°€ ë ê¹Œìš”?\nì•„ë¬´ í‚¤ë‚˜ ëˆŒëŸ¬ì„œ í™•ì¸í•˜ì„¸ìš”!");
+		getChar();
 
-		int selected = rand() * 5; // 0-4 »çÀÌÀÇ ¼ıÀÚ ¹İÈ¯
-		printfCat(selected);
+		int selected = rand() % 5; // 0-4 ì‚¬ì´ì˜ ìˆ«ì ë°˜í™˜
+		printfCat(selected); // ë½‘ì€ ê³ ì–‘ì´ ì •ë³´ ì¶œë ¥
+		collection[selected] = 1;// ê³ ì–‘ì´ ë½‘ê¸° ì²˜ë¦¬
+
+		int collectAll = checkCollection();
+		if (collectAll == 1)
+		{
+			break;
+		}
 	}
 
 	return 0;
@@ -44,39 +51,39 @@ int main(void)
 
 void initCats()
 {
-	cats[0].name = "±ô³ÉÀÌ";
+	cats[0].name = "ê¹œëƒ¥ì´";
 	cats[0].age = 5;
-	cats[0].character = "¿Â¼ø";
+	cats[0].character = "ì˜¨ìˆœ";
 	cats[0].level = 1;
 
-	cats[1].name = "±Í¿ä¹Ì";
+	cats[1].name = "ê·€ìš”ë¯¸";
 	cats[1].age = 3;
-	cats[1].character = "³¯Ä«·Ó";
+	cats[1].character = "ë‚ ì¹´ë¡­";
 	cats[1].level = 2;
 
-	cats[2].name = "¼öÁİÀÌ";
+	cats[2].name = "ìˆ˜ì¤ì´";
 	cats[2].age = 7;
-	cats[2].character = "´Ã Àá¸¸ Àá";
+	cats[2].character = "ëŠ˜ ì ë§Œ ì ";
 	cats[2].level = 3;
 
-	cats[3].name = "±î²áÀÌ";
+	cats[3].name = "ê¹Œê¿ì´";
 	cats[3].age = 2;
-	cats[3].character = "½Ã²ô·¯¿ò";
+	cats[3].character = "ì‹œë„ëŸ¬ì›€";
 	cats[3].level = 4;
 
-	cats[4].name = "µÅ³ÉÀÌ";
+	cats[4].name = "ë¼ëƒ¥ì´";
 	cats[4].age = 1;
-	cats[4].character = "¹è°íÇÄ";
+	cats[4].character = "ë°°ê³ í””";
 	cats[4].level = 5;
 }
 
 void printCat(int selected)
 {
-	printf("\n\n=== ´ç½ÅÀº ÀÌ °í¾çÀÌÀÇ Áı»ç°¡ µÇ¾ú¾î¿ä! ===\n\n");
-	printf(" ÀÌ¸§ :       %s\n", cats[selected].name);
-	printf(" ³ªÀÌ :       %d\n", cats[selected].age);
-	printf(" Æ¯Â¡(¼º°İ) : %s\n", cats[selected].character);
-	printf(" ·¹º§ :       ");
+	printf("\n\n=== ë‹¹ì‹ ì€ ì´ ê³ ì–‘ì´ì˜ ì§‘ì‚¬ê°€ ë˜ì—ˆì–´ìš”! ===\n\n");
+	printf(" ì´ë¦„ :       %s\n", cats[selected].name);
+	printf(" ë‚˜ì´ :       %d\n", cats[selected].age);
+	printf(" íŠ¹ì§•(ì„±ê²©) : %s\n", cats[selected].character);
+	printf(" ë ˆë²¨ :       ");
 
 	for (int i = 0; i < cats[selected].level; i++)
 	{
@@ -84,3 +91,32 @@ void printCat(int selected)
 	}
 	printf("\n\n");
 }
+
+int checkCollection()
+{
+	// í˜„ì¬ ë³´ìœ í•œ ê³ ì–‘ì´ ëª©ë¡ë„ ì¶œë ¥
+	// ë‹¤ ëª¨ì•˜ëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜
+	int collectAll = 1;
+
+	printf("\n\n === ë³´ìœ í•œ ê³ ì–‘ì´ ëª©ë¡ì´ì—ìš” === \n\n");
+	for (int i = 0; i < 5; i++)
+	{
+		if (collection[i] == 0) // ê³ ì–‘ì´ ìˆ˜ì§‘ X
+		{
+			printf("%10s", "(ë¹ˆ ë°•ìŠ¤)");
+			collectAll = 0; // ë‹¤ ëª¨ìœ¼ì§€ ëª»í•œ ìƒíƒœ
+		}
+		else // ê³ ì–‘ì´ ìˆ˜ì§‘ 0
+		{
+			printf("%10s", cats[i].name);
+		}
+	}
+	printf("\n====================================\n\n");
+
+	if (collectAll) // ëª¨ë“  ê³ ì–‘ì´ë¥¼ ë‹¤ ëª¨ì€ ê²½ìš°
+	{
+		printf("\n\n ì¶•í•˜í•©ë‹ˆë‹¤ ! ëª¨ë“  ê³ ì–‘ì´ë¥¼ ë‹¤ ëª¨ì•˜ì–´ìš”, ì—´ì‹¬íˆ í‚¤ì›Œì£¼ì„¸ìš” !\n\n");
+	}
+
+	return collectAll;
+;}

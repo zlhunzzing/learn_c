@@ -5,27 +5,64 @@
 #define MAX 10000
 int main(void)
 {
-	// ÆÄÀÏ ÀÔÃâ·Â
-	// ÆÄÀÏ¿¡ ¾î¶² µ¥ÀÌÅÍ¸¦ ÀúÀå
-	// ÆÄÀÏ¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ¸¦ ºÒ·¯¿À±â
-	
-	// fputs, fgets  ½Ö
-	char line[MAX]; // char[10000]
-	FILE* file = fopen("C:\\Users\\zlhunzzing\\Desktop\\test1.txt", "wb"); // r w a, t b
+	// íŒŒì¼ ì…ì¶œë ¥
+	// íŒŒì¼ì— ì–´ë–¤ ë°ì´í„°ë¥¼ ì €ì¥
+	// íŒŒì¼ì— ì €ì¥ëœ ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¤ê¸°
+
+	// fputs, fgets  ìŒ -> ë¬¸ìì—´ ì €ì¥
+	//char line[MAX]; // char[10000]
+	// íŒŒì¼ì— ì“°ê¸°
+	//FILE* file = fopen("C:\\Users\\zlhunzzing\\Desktop\\test1.txt", "wb"); // r w a, t b
+	//if (file == NULL)
+	//{
+	//	printf("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨\n");
+	//	return 1;
+	//}
+
+	//fputs("fputs ë¥¼ ì´ìš©í•´ì„œ ê¸€ì„ ì ì–´ë³¼ê²Œìš”\n", file);
+	//fputs("ì˜ ì íˆëŠ”ì§€ í™•ì¸í•´ì£¼ì„¸ìš”", file);
+
+	// íŒŒì¼ ì½ê¸°
+	//FILE* file = fopen("C:\\Users\\zlhunzzing\\Desktop\\test1.txt", "rb"); // r w a, t b
+	//if (file == NULL)
+	//{
+	//	printf("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨\n");
+	//	return 1;
+	//}
+
+	//while (fgets(line, MAX, file) != NULL)
+	//{
+	//	printf("%s", line);
+	//}
+
+	// íŒŒì¼ì„ ì—´ê³  ë‚˜ì„œ ë‹«ì§€ ì•Šì€ ìƒíƒœì—ì„œ ì–´ë–¤ í”„ë¡œê·¸ë¨ì— ë¬¸ì œê°€ ìƒê¸°ë©´?
+	// ë°ì´í„° ì†ì‹¤ ë°œìƒ ê°€ëŠ¥ ! ê·¸ë˜ì„œ í•­ìƒ íŒŒì¼ì„ ë‹«ì•„ì£¼ëŠ” ìŠµê´€ì„ ë“¤ì—¬ì£¼ì„¸ìš”
+	//fclose(file);
+
+
+
+
+
+	// fprintf, fscanf  ìŒ
+	// printf("%d %d %s ... ")
+	// scanf("%d %d", &num1, ...)
+	int num[6] = { 0, 0, 0, 0, 0, 0 }; // ì¶”ì²¨ë²ˆí˜¸
+	int bonus = 0; // ë³´ë„ˆìŠ¤ ë²ˆí˜¸
+	char str1[MAX];
+	char str2[MAX];
+	FILE* file = fopen("C:\\Users\\zlhunzzing\\Desktop\\test2.txt", "wb");
 	if (file == NULL)
 	{
-		printf("ÆÄÀÏ ¿­±â ½ÇÆĞ\n");
+		printf("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨\n");
 		return 1;
 	}
 
-	fputs("fputs ¸¦ ÀÌ¿ëÇØ¼­ ±ÛÀ» Àû¾îº¼°Ô¿ä\n", file);
-	fputs("Àß ÀûÈ÷´ÂÁö È®ÀÎÇØÁÖ¼¼¿ä", file);
+	// ë¡œë˜ ì¶”ì²¨ ë²ˆí˜¸ ì €ì¥
+	fprintf(file, "%s %d %d %d %d %d %d\n", "ì¶”ì²¨ë²ˆí˜¸ ", 1, 2, 3, 4, 5, 6);
+	fprintf(file, "%s %d\n", "ë³´ë„ˆìŠ¤ë²ˆí˜¸ ", 7);
 
-	// ÆÄÀÏÀ» ¿­°í ³ª¼­ ´İÁö ¾ÊÀº »óÅÂ¿¡¼­ ¾î¶² ÇÁ·Î±×·¥¿¡ ¹®Á¦°¡ »ı±â¸é?
-	// µ¥ÀÌÅÍ ¼Õ½Ç ¹ß»ı °¡´É ! ±×·¡¼­ Ç×»ó ÆÄÀÏÀ» ´İ¾ÆÁÖ´Â ½À°üÀ» µé¿©ÁÖ¼¼¿ä
 	fclose(file);
 
-	// fprintf, fscanf  ½Ö
 
 	return 0;
 }
